@@ -27,8 +27,8 @@ CREATE TABLE `t_cus_dev_plan`  (
   `plan_item` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '计划内容',
   `plan_date` datetime(0) NULL DEFAULT NULL COMMENT '计划日期',
   `exe_affect` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '执行效果',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FK_t_cus_dev_plan`(`sale_chance_id`) USING BTREE
@@ -67,8 +67,8 @@ CREATE TABLE `t_customer`  (
   `national_tax_num` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '国税登记号',
   `state` int(11) NULL DEFAULT NULL COMMENT '流失状态',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效时间',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -93,8 +93,8 @@ CREATE TABLE `t_customer_contact`  (
   `contact_time` datetime(0) NULL DEFAULT NULL COMMENT '交往时间',
   `address` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '交往地址',
   `overview` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '概要信息',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -119,8 +119,8 @@ CREATE TABLE `t_customer_linkman`  (
   `office_phone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '办公电话',
   `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '手机号',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -149,8 +149,8 @@ CREATE TABLE `t_customer_loss`  (
   `state` int(11) NULL DEFAULT NULL COMMENT '流失状态',
   `loss_reason` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '流失原因',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 760 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -170,8 +170,8 @@ CREATE TABLE `t_customer_order`  (
   `order_date` datetime(0) NULL DEFAULT NULL COMMENT '下单时间',
   `address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地址',
   `state` int(11) NULL DEFAULT NULL COMMENT '状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -193,8 +193,8 @@ CREATE TABLE `t_customer_reprieve`  (
   `loss_id` int(11) NULL DEFAULT NULL COMMENT '流失id',
   `measure` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '措施',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 52 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -223,8 +223,8 @@ CREATE TABLE `t_customer_serve`  (
   `service_proce_result` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '处理结果',
   `satisfaction` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '满意度',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '是否有效',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 88 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -250,8 +250,8 @@ CREATE TABLE `t_datadic`  (
   `data_dic_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `data_dic_value` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `is_valid` tinyint(4) NULL DEFAULT 1,
-  `create_date` datetime(0) NULL DEFAULT NULL,
-  `update_date` datetime(0) NULL DEFAULT NULL,
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FK_t_datadic`(`data_dic_value`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -281,7 +281,7 @@ CREATE TABLE `t_log`  (
   `exception_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `exception_detail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `params` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  `create_date` datetime(0) NULL DEFAULT NULL,
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
   `execute_time` int(11) NULL DEFAULT NULL,
   `create_man` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `result` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
@@ -309,8 +309,8 @@ CREATE TABLE `t_module`  (
   `opt_value` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限值',
   `orders` int(11) NULL DEFAULT NULL COMMENT '排序号',
   `is_valid` int(4) NULL DEFAULT NULL COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 161 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -386,8 +386,8 @@ CREATE TABLE `t_order_details`  (
   `price` float NULL DEFAULT NULL COMMENT '单价',
   `sum` float NULL DEFAULT NULL COMMENT '总金额',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -410,8 +410,8 @@ CREATE TABLE `t_permission`  (
   `role_id` int(11) NULL DEFAULT NULL COMMENT '角色ID',
   `module_id` int(11) NULL DEFAULT NULL COMMENT '模块ID',
   `acl_value` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限值',
-  `create_date` datetime(0) NULL DEFAULT NULL,
-  `update_date` datetime(0) NULL DEFAULT NULL,
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 8575 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -551,8 +551,8 @@ CREATE TABLE `t_role`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `role_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色名',
   `role_remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色备注',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   `is_valid` int(11) NULL DEFAULT NULL COMMENT '有效状态',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -586,8 +586,8 @@ CREATE TABLE `t_sale_chance`  (
   `state` int(11) NULL DEFAULT NULL COMMENT '分配状态',
   `dev_result` int(11) NULL DEFAULT NULL COMMENT '开发结果',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -610,8 +610,8 @@ CREATE TABLE `t_user`  (
   `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
   `phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话\r',
   `is_valid` int(4) NULL DEFAULT 1 COMMENT '有效状态',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -630,8 +630,8 @@ CREATE TABLE `t_user_role`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `user_id` int(11) NULL DEFAULT NULL COMMENT '用户id',
   `role_id` int(11) NULL DEFAULT NULL COMMENT '角色id',
-  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `update_date` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `create_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '创建时间',
+  `update_time` datetime(3)      NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 201 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 

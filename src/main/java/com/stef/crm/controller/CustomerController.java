@@ -1,14 +1,15 @@
 package com.stef.crm.controller;
 
-import com.stef.crm.entity.Customer;
-import com.stef.crm.service.CustomerService;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.stef.crm.common.RespBean;
+import com.stef.crm.entity.Customer;
+import com.stef.crm.service.CustomerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -21,6 +22,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RequestMapping("/customer")
 @Api(value = "/customer", tags = "管理")
 public class CustomerController {
+
+
+    @Value("${server.port}")
+    private Integer port;
 
     @Autowired
     private  CustomerService customerService;
